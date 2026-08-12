@@ -19,6 +19,8 @@ import {
   resolveWeekendReportContext,
   saveWeekendFeedback,
 } from '../data/weekendReportData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 const DEMO_MODES = [
   { id: 'private', label: '私密记忆' },
@@ -102,7 +104,7 @@ export default function WeekendReport() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page weekend-report-page">
         <header className="wr-hero">
-          <div className="wr-hero__sky" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.weekendReport} tone="warm" />
           <div className="wr-topbar">
             <button
               type="button"

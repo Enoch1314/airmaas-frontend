@@ -15,6 +15,8 @@ import {
   resolveReturnAdjustContext,
   resolveSelectedPlan,
 } from '../data/returnAdjustData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 export default function ReturnAdjust() {
   const navigate = useNavigate()
@@ -66,8 +68,7 @@ export default function ReturnAdjust() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page return-adjust-page">
         <header className="ra-hero">
-          <div className="ra-hero__sky" aria-hidden="true" />
-          <div className="ra-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.returnAdjust} />
 
           <div className="ra-topbar">
             <button

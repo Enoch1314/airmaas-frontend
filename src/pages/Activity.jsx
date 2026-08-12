@@ -15,6 +15,8 @@ import {
   resolveActivityContext,
   simulateExtend,
 } from '../data/activityData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 export default function Activity() {
   const navigate = useNavigate()
@@ -57,7 +59,7 @@ export default function Activity() {
     <div className="phone-shell phone-shell--subpage phone-shell--activity">
       <main className="app-page activity-page">
         <header className="ac-hero">
-          <div className="ac-hero__sky" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.activity} />
 
           <div className="ac-topbar">
             <button

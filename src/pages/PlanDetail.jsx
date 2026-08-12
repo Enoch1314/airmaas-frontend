@@ -10,6 +10,8 @@ import GuaranteePreview from '../components/detail/GuaranteePreview'
 import BackupCollapse from '../components/detail/BackupCollapse'
 import { getPlanDetail, resolvePlanType } from '../data/planDetailData'
 import { SELECTED_PLAN_KEY } from '../data/compareData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 function resolveType(searchParams, state) {
   const fromQuery = searchParams.get('type')
@@ -57,8 +59,7 @@ export default function PlanDetail() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page plan-detail-page">
         <header className="pd-hero">
-          <div className="pd-hero__sky" aria-hidden="true" />
-          <div className="pd-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.planDetail} />
 
           <div className="pd-topbar">
             <button

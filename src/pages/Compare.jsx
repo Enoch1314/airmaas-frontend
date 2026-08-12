@@ -21,6 +21,8 @@ import {
   setPlanningMode,
 } from '../data/planningModeData'
 import { userProfile } from '../data/mockData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 function saveSelectedPlan(plan, planningMode) {
   const payload = {
@@ -89,8 +91,7 @@ export default function Compare() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page compare-page">
         <header className="cp-hero">
-          <div className="cp-hero__sky" aria-hidden="true" />
-          <div className="cp-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.compare} />
 
           <div className="cp-topbar">
             <button

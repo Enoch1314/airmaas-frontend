@@ -18,6 +18,8 @@ import {
   saveDirectPlanSnapshot,
   setPlanningMode,
 } from '../data/planningModeData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 export default function DirectPlan() {
   const navigate = useNavigate()
@@ -95,8 +97,7 @@ export default function DirectPlan() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page direct-plan-page">
         <header className="dp-hero">
-          <div className="dp-hero__sky" aria-hidden="true" />
-          <div className="dp-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.directPlan} />
 
           <div className="dp-topbar">
             <button

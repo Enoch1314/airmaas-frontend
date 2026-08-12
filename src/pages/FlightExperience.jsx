@@ -12,6 +12,8 @@ import SafetyNote from '../components/flight/SafetyNote'
 import LandingNext from '../components/flight/LandingNext'
 import { userProfile } from '../data/mockData'
 import { resolveFlightExperienceContext } from '../data/flightExperienceData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 export default function FlightExperience() {
   const navigate = useNavigate()
@@ -46,8 +48,7 @@ export default function FlightExperience() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page flight-experience-page">
         <header className={`fe-hero${ctx.isScenic ? ' is-scenic' : ''}`}>
-          <div className="fe-hero__sky" aria-hidden="true" />
-          <div className="fe-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={ctx.isScenic ? pageHeroPhoto.flightScenic : pageHeroPhoto.flight} />
 
           <div className="fe-topbar">
             <button

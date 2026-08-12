@@ -14,6 +14,8 @@ import DemoStageSheet from '../components/itinerary/DemoStageSheet'
 import FloatingAssistant from '../components/itinerary/FloatingAssistant'
 import { resolveItineraryContext } from '../data/itineraryData'
 import { FINAL_ADJUSTMENT_KEY, TRIP_ADJUST_SESSION_KEY } from '../data/tripResultData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 function hasTripAdjustment() {
   try {
@@ -75,8 +77,7 @@ export default function Itinerary() {
     <div className="phone-shell phone-shell--subpage phone-shell--itinerary">
       <main className="app-page itinerary-page">
         <header className="it-hero">
-          <div className="it-hero__sky" aria-hidden="true" />
-          <div className="it-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.itinerary} />
 
           <div className="it-topbar">
             <button

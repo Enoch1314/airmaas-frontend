@@ -21,6 +21,8 @@ import ReadyChecklist from '../components/need/ReadyChecklist'
 import { needConfirmDefaults } from '../data/needConfirmData'
 import { setPlanningMode } from '../data/planningModeData'
 import { userProfile } from '../data/mockData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 function resolveInitial(state) {
   const base = { ...needConfirmDefaults }
@@ -82,8 +84,7 @@ export default function NeedConfirm() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page need-confirm-page">
         <header className="nc-hero">
-          <div className="nc-hero__sky" aria-hidden="true" />
-          <div className="nc-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.needConfirm} />
 
           <div className="nc-topbar">
             <button

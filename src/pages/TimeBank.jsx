@@ -17,6 +17,8 @@ import {
   redeemBenefit,
   resolveTimeBankContext,
 } from '../data/timeBankData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 export default function TimeBank() {
   const navigate = useNavigate()
@@ -54,7 +56,7 @@ export default function TimeBank() {
     <div className="phone-shell phone-shell--subpage phone-shell--timebank">
       <div className="app-page time-bank-page">
         <header className="tb-hero">
-          <div className="tb-hero__sky" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.timeBank} tone="warm" />
           <div className="tb-topbar">
             <button
               type="button"

@@ -28,6 +28,8 @@ import {
   serviceOptions,
   standardService,
 } from '../data/serviceSelectData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 function readStoredGuarantees() {
   try {
@@ -136,8 +138,7 @@ export default function ServiceSelect() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page service-select-page">
         <header className="ss-hero">
-          <div className="ss-hero__sky" aria-hidden="true" />
-          <div className="ss-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.serviceSelect} />
 
           <div className="ss-topbar">
             <button

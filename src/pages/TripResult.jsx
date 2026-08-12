@@ -10,6 +10,8 @@ import FeedbackBlock from '../components/result/FeedbackBlock'
 import ReportEntryCard from '../components/result/ReportEntryCard'
 import { resolveTripResultContext } from '../data/tripResultData'
 import { saveWeekendFeedback } from '../data/weekendReportData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 const DEMO_RESULTS = [
   { id: 'fulfilled', label: '全部完成' },
@@ -53,8 +55,7 @@ export default function TripResult() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page trip-result-page">
         <header className="tr-hero">
-          <div className="tr-hero__sky" aria-hidden="true" />
-          <div className="tr-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.tripResult} />
 
           <div className="tr-topbar">
             <button

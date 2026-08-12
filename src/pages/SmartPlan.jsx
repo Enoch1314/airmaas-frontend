@@ -14,6 +14,8 @@ import {
 } from '../data/smartPlanData'
 import { setPlanningMode } from '../data/planningModeData'
 import { userProfile } from '../data/mockData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 function buildPrefill(state) {
   if (!state?.from && !state?.to) return smartInputDefault
@@ -97,8 +99,7 @@ export default function SmartPlan() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page smart-plan-page">
         <header className="sp-hero">
-          <div className="sp-hero__sky" aria-hidden="true" />
-          <div className="sp-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.smartPlan} />
 
           <div className="sp-topbar">
             <button

@@ -7,6 +7,8 @@ import {
   quickActions,
   resolveBookingSuccessContext,
 } from '../data/bookingSuccessData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 const actionIcons = {
   calendar: CalendarPlus,
@@ -34,8 +36,7 @@ export default function BookingSuccess() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page booking-success-page">
         <header className="bs-hero">
-          <div className="bs-hero__sky" aria-hidden="true" />
-          <div className="bs-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.bookingSuccess} />
 
           <div className="bs-topbar">
             <button

@@ -11,6 +11,8 @@ import CancelDialog from '../components/trip/CancelDialog'
 import TripAssistantSheet from '../components/trip/TripAssistantSheet'
 import { resolveTripAdjustContext } from '../data/tripAdjustData'
 import { saveFinalAdjustmentChoice } from '../data/tripResultData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 const DEMO_REASONS = [
   { id: 'weather', label: '天气' },
@@ -73,8 +75,7 @@ export default function TripAdjust() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page trip-adjust-page">
         <header className="ta-hero">
-          <div className="ta-hero__sky" aria-hidden="true" />
-          <div className="ta-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.tripAdjust} />
 
           <div className="ta-topbar">
             <button

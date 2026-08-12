@@ -20,6 +20,8 @@ import {
   resolveOrderContext,
   timeCoinConfig,
 } from '../data/orderConfirmData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 export default function OrderConfirm() {
   const navigate = useNavigate()
@@ -64,8 +66,7 @@ export default function OrderConfirm() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page order-confirm-page">
         <header className="oc-hero">
-          <div className="oc-hero__sky" aria-hidden="true" />
-          <div className="oc-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.orderConfirm} />
 
           <div className="oc-topbar">
             <button

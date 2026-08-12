@@ -15,6 +15,8 @@ import {
 import { getPlanDetail, resolvePlanType } from '../data/planDetailData'
 import { SELECTED_PLAN_KEY } from '../data/compareData'
 import { userProfile } from '../data/mockData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 function resolveCurrentPlan(searchParams, state) {
   const fromQuery = searchParams.get('type')
@@ -81,8 +83,7 @@ export default function TimeGuarantee() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page time-guarantee-page">
         <header className="tg-hero">
-          <div className="tg-hero__sky" aria-hidden="true" />
-          <div className="tg-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.timeGuarantee} />
 
           <div className="tg-topbar">
             <button

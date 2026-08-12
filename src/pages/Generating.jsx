@@ -10,6 +10,8 @@ import {
   setPlanningMode,
 } from '../data/planningModeData'
 import { userProfile } from '../data/mockData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 export default function Generating() {
   const navigate = useNavigate()
@@ -69,8 +71,7 @@ export default function Generating() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page generating-page">
         <header className="gn-hero">
-          <div className="gn-hero__sky" aria-hidden="true" />
-          <div className="gn-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.generating} />
 
           <div className="gn-topbar">
             <button

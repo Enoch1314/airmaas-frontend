@@ -1,9 +1,11 @@
 import { Settings } from 'lucide-react'
+import PageHeroBackdrop from '../PageHeroBackdrop'
+import { pageHeroPhoto } from '../../data/heroBgData'
 
 export default function ProfileHeader({ user, onSettings }) {
   return (
     <header className="pf-hero">
-      <div className="pf-hero__sky" aria-hidden="true" />
+      <PageHeroBackdrop src={pageHeroPhoto.profile} />
       <div className="pf-topbar">
         <div className="pf-avatar" aria-hidden="true">
           {user.avatarText}

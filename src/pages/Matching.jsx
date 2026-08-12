@@ -24,6 +24,8 @@ import {
   matchingInfoBase,
   resolveMatchStatus,
 } from '../data/matchingData'
+import PageHeroBackdrop from '../components/PageHeroBackdrop'
+import { pageHeroPhoto } from '../data/heroBgData'
 
 function readJson(key) {
   try {
@@ -209,8 +211,7 @@ export default function Matching() {
     <div className="phone-shell phone-shell--subpage">
       <div className="app-page matching-page">
         <header className="mt-hero">
-          <div className="mt-hero__sky" aria-hidden="true" />
-          <div className="mt-hero__skyline" aria-hidden="true" />
+          <PageHeroBackdrop src={pageHeroPhoto.matching} />
 
           <div className="mt-topbar">
             <button
