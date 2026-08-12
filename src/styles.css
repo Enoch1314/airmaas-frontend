@@ -108,7 +108,8 @@ p {
   max-width: var(--phone-max);
   min-height: 100vh;
   height: auto;
-  overflow: visible;
+  overflow-x: hidden;
+  overflow-y: visible;
   background: linear-gradient(180deg, #f8fbfe 0%, var(--bg-shell) 42%, #f5f8fc 100%);
   border-radius: 0;
   box-shadow: 0 18px 48px rgba(70, 105, 145, 0.14);
@@ -117,8 +118,10 @@ p {
 .app-page {
   height: auto;
   min-height: 0;
-  overflow: visible;
-  padding: 14px var(--page-pad-x) 90px;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  padding: 14px var(--page-pad-x) calc(var(--nav-h) + var(--safe-bottom) + 22px);
   scrollbar-width: none;
 }
 
@@ -364,16 +367,21 @@ p {
 /* Dual entry */
 .entry-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 10px;
   margin-bottom: 14px;
   align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .entry-card {
   position: relative;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
   min-height: 292px;
   padding: 14px 12px 12px;
   border-radius: var(--card-radius);
@@ -501,15 +509,21 @@ p {
 
 .btn {
   width: 100%;
+  max-width: 100%;
   min-height: 46px;
   border-radius: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 2px;
+  padding: 8px 10px;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.01em;
+  line-height: 1.25;
+  white-space: normal;
+  text-align: center;
+  box-sizing: border-box;
   transition: transform 0.15s ease, filter 0.2s ease, box-shadow 0.2s ease;
   margin-top: auto;
 }
@@ -537,6 +551,8 @@ p {
 /* Quick tags */
 .quick-tags {
   margin: 0 0 16px;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .quick-tags__scroller,
@@ -544,9 +560,12 @@ p {
   display: flex;
   gap: 10px;
   overflow-x: auto;
+  max-width: 100%;
   padding: 2px 1px 4px;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .quick-tags__scroller::-webkit-scrollbar,
@@ -627,6 +646,8 @@ p {
 /* Recommendations */
 .section {
   margin-bottom: 16px;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .section-head {
@@ -739,9 +760,12 @@ p {
 /* Bottom duo */
 .bottom-duo {
   display: grid;
-  grid-template-columns: 1fr 1.12fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
   gap: 10px;
   margin-bottom: 6px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .info-card {
@@ -985,7 +1009,9 @@ p {
 
 .direct-plan-page {
   padding-top: 0;
-  padding-bottom: 110px;
+  padding-bottom: calc(96px + var(--safe-bottom));
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .dp-hero {
@@ -1075,6 +1101,10 @@ p {
   border-radius: 22px;
   background: #fff;
   box-shadow: var(--shadow-card);
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .dp-field {
@@ -1154,7 +1184,7 @@ p {
 
 .dp-mode {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 8px;
   padding: 4px;
   border-radius: 14px;
@@ -1163,12 +1193,13 @@ p {
 
 .dp-mode__btn {
   min-height: 40px;
+  min-width: 0;
   border-radius: 11px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
-  padding: 0 8px;
+  padding: 0 6px;
   font-size: 12px;
   font-weight: 600;
   color: var(--text-secondary);
@@ -1191,6 +1222,8 @@ p {
   justify-content: space-between;
   gap: 10px;
   min-height: 52px;
+  min-width: 0;
+  max-width: 100%;
   padding: 10px 2px;
   border-bottom: 1px solid var(--line);
 }
@@ -1202,16 +1235,19 @@ p {
   color: var(--text-main);
   font-size: 13px;
   font-weight: 600;
-  flex-shrink: 0;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .dp-row__left svg {
   color: var(--text-secondary);
+  flex-shrink: 0;
 }
 
 .dp-row--input .dp-row__input {
   min-width: 0;
-  flex: 1;
+  flex: 1 1 auto;
+  max-width: 58%;
   border: none;
   outline: none;
   background: transparent;
@@ -1220,12 +1256,16 @@ p {
   font-size: 13px;
   font-weight: 600;
   color: var(--text-main);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .dp-counter {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .dp-counter__btn {
@@ -1498,8 +1538,10 @@ p {
   bottom: 0;
   z-index: 25;
   width: min(100%, var(--phone-max));
+  max-width: 100%;
   transform: translateX(-50%);
-  padding: 12px 16px calc(14px + var(--safe-bottom));
+  padding: 12px 16px calc(16px + var(--safe-bottom));
+  box-sizing: border-box;
   background: linear-gradient(180deg, rgba(247, 250, 253, 0), #f7fafd 28%);
 }
 
@@ -10953,7 +10995,9 @@ p {
 /* ========== Weekend Report (P20) ========== */
 .weekend-report-page {
   padding-top: 0;
-  padding-bottom: 120px;
+  padding-bottom: calc(28px + var(--safe-bottom));
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .wr-hero {
@@ -11038,6 +11082,9 @@ p {
   border-radius: 20px;
   background: #fff;
   box-shadow: var(--shadow-card);
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .wr-cover {
@@ -11203,8 +11250,10 @@ p {
 
 .wr-memory__list li {
   display: grid;
-  grid-template-columns: 46px 1fr;
+  grid-template-columns: 42px minmax(0, 1fr);
   gap: 8px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .wr-memory__time {
@@ -11216,13 +11265,16 @@ p {
 
 .wr-memory__card {
   display: grid;
-  grid-template-columns: 28px 1fr 42px;
+  grid-template-columns: 28px minmax(0, 1fr) 42px;
   gap: 8px;
   align-items: center;
   padding: 10px;
   border-radius: 14px;
   background: linear-gradient(135deg, #f7f4fc, #fff);
   border: 1px solid #ece6f5;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .wr-memory__icon {
@@ -11235,11 +11287,14 @@ p {
   color: #6a4ea8;
   font-size: 11px;
   font-weight: 700;
+  flex-shrink: 0;
 }
 
 .wr-memory__card strong {
   display: block;
   font-size: 13px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .wr-memory__card em {
@@ -11249,12 +11304,15 @@ p {
   font-size: 11px;
   color: var(--text-muted);
   line-height: 1.4;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .wr-memory__shot {
   width: 42px;
   height: 42px;
   border-radius: 10px;
+  flex-shrink: 0;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.5), transparent),
     linear-gradient(160deg, #d9e6f5, #f0e2d4);
@@ -13833,11 +13891,14 @@ p {
 }
 
 .trip-adjust-page,
-.weekend-report-page,
 .time-bank-page,
 .profile-page,
 .trip-result-page {
   padding-bottom: 96px;
+}
+
+.weekend-report-page {
+  padding-bottom: calc(28px + var(--safe-bottom));
 }
 
 .it-fab {
@@ -14115,7 +14176,7 @@ p {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
   .entry-grid,
   .bottom-duo {
     grid-template-columns: 1fr;
@@ -14130,12 +14191,25 @@ p {
   }
 }
 
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 26px;
+  }
+}
+
 /* ========== PWA / standalone (safe-area only) ========== */
 html {
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+#root {
+  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -14191,5 +14265,64 @@ body {
     .phone-shell {
       padding-top: max(var(--safe-top), env(safe-area-inset-top, 0px));
     }
+  }
+}
+
+/* ========== Capacitor / real-phone fit ========== */
+@media (max-width: 480px), (display-mode: standalone) {
+  .desktop-stage {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .phone-shell:not(.phone-shell--welcome) {
+    width: 100%;
+    max-width: 100%;
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .bottom-nav,
+  .dp-bottom-bar {
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .toast {
+    left: 18px;
+    right: 18px;
+    width: auto;
+    max-width: none;
+    transform: translateY(10px);
+  }
+
+  .toast.is-visible {
+    transform: translateY(0);
+  }
+
+  .dp-mode__btn {
+    font-size: 11px;
+    gap: 3px;
+  }
+
+  .dp-hero,
+  .wr-hero {
+    max-width: 100%;
+  }
+
+  .wr-life__row {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .home-page,
+  .direct-plan-page,
+  .weekend-report-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
