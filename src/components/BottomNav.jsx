@@ -18,8 +18,8 @@ export default function BottomNav() {
       {navItems.map((item) => {
         const Icon = icons[item.id]
         const active =
-          item.path === '/'
-            ? location.pathname === '/'
+          item.path === '/home'
+            ? location.pathname === '/home' || location.pathname === '/'
             : location.pathname.startsWith(item.path)
 
         return (

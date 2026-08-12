@@ -201,7 +201,7 @@ export default function Welcome() {
 
   const finish = () => {
     markOnboardingSeen()
-    navigate('/', { replace: true })
+    navigate('/home', { replace: true })
   }
 
   const showToast = (message) => {

@@ -86,7 +86,7 @@ export const nextTrip = {
 }
 
 export const navItems = [
-  { id: 'home', label: '周末', path: '/' },
+  { id: 'home', label: '周末', path: '/home' },
   { id: 'trips', label: '行程', path: '/itinerary' },
   { id: 'time', label: '时间', path: '/time-bank' },
   { id: 'me', label: '我的', path: '/profile' },

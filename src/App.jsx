@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Welcome from './pages/Welcome'
 import DirectPlan from './pages/DirectPlan'
@@ -24,10 +24,11 @@ import Profile from './pages/Profile'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="desktop-stage">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Navigate to="/welcome" replace />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/direct-plan" element={<DirectPlan />} />
           <Route path="/smart-plan" element={<SmartPlan />} />
@@ -49,9 +50,9 @@ export default function App() {
           <Route path="/time-bank" element={<TimeBank />} />
           <Route path="/weekend-report" element={<WeekendReport />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<Navigate to="/welcome" replace />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }

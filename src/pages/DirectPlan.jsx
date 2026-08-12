@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+﻿import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   ArrowLeft,
@@ -104,7 +104,7 @@ export default function DirectPlan() {
               type="button"
               className="dp-icon-btn"
               aria-label="返回首页"
-              onClick={() => navigate('/')}
+              onClick={() => navigate('/home')}
             >
               <ArrowLeft size={18} strokeWidth={2.3} />
             </button>

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+﻿import { useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import { ArrowLeft, MessageCircle } from 'lucide-react'
 import FactCard from '../components/trip/FactCard'
@@ -156,7 +156,7 @@ export default function TripAdjust() {
       <CancelDialog
         open={cancelOpen}
         refundLabel={selected?.feeLabel || '预计按规则退款'}
-        onConfirm={() => navigate('/')}
+        onConfirm={() => navigate('/home')}
         onBack={() => {
           setCancelOpen(false)
           setSelectedId('')

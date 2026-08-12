@@ -1,4 +1,4 @@
-import { useNavigate, useLocation } from 'react-router-dom'
+﻿import { useNavigate, useLocation } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { placeholderPages } from '../data/mockData'
 
@@ -119,7 +119,7 @@ export default function PlaceholderPage({ title }) {
           <button
             type="button"
             className="btn btn--blue"
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/home')}
           >
             返回首页
           </button>

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+﻿import { useMemo, useState } from 'react'
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import { ArrowLeft, Home } from 'lucide-react'
 import LifeResultCard from '../components/result/LifeResultCard'
@@ -70,7 +70,7 @@ export default function TripResult() {
               type="button"
               className="tr-icon-btn"
               aria-label="首页"
-              onClick={() => navigate('/')}
+              onClick={() => navigate('/home')}
             >
               <Home size={16} strokeWidth={2.2} />
             </button>

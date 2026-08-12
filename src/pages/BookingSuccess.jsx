@@ -203,7 +203,7 @@ export default function BookingSuccess() {
         <button
           type="button"
           className="bs-secondary-btn"
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/home')}
         >
           返回首页
         </button>
