@@ -5,6 +5,21 @@ import {
   welcomeSlides,
 } from '../data/welcomeData'
 
+function WelcomeBackdrop() {
+  return (
+    <div className="wl-bg" aria-hidden="true">
+      <div className="wl-bg__sky" />
+      <div className="wl-bg__sun" />
+      <div className="wl-bg__cloud wl-bg__cloud--1" />
+      <div className="wl-bg__cloud wl-bg__cloud--2" />
+      <div className="wl-bg__cloud wl-bg__cloud--3" />
+      <div className="wl-bg__craft" />
+      <div className="wl-bg__city" />
+      <div className="wl-bg__mist" />
+    </div>
+  )
+}
+
 function LifeVisual() {
   return (
     <div className="wl-visual wl-visual--life" aria-hidden="true">
@@ -103,6 +118,8 @@ export default function Welcome() {
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
+        <WelcomeBackdrop />
+
         <header className="wl-top">
           <span className="wl-brand">AirMaaS</span>
           <button type="button" className="wl-skip" onClick={finish}>
